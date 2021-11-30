@@ -24,7 +24,7 @@
               <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
             </ul>
           </li>
-          <li class="active"><a class="nav-link" href="/crud"><i class="fa fa-briefcase"></i> <span>Crud</span></a></li>
+          <li class="active"><a class="nav-link" href="{{ route('cr') }}"><i class="fa fa-briefcase"></i> <span>Crud</span></a></li>
         </ul>
 
         <div class="mt-4 mb-4 p-3 hide-sidebar-mini">

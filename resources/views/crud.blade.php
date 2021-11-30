@@ -8,7 +8,7 @@
           <h4 class="card-title">@yield('card-header')</h4>
         </div>
         <div class="card-body">
-            <a href="/crud/tambah" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Tambah Data</a>
+            <a href="{{route('cr.t')}}" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Tambah Data</a>
         </div>
     </div>
 </div>
