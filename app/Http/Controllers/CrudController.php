@@ -26,8 +26,15 @@ class CrudController extends Controller
 
     //method untuk menampilkan edit data
 
+
     //method untuk simpan data
 
     //method untuk hapus data
+    public function delete($id){
+        // echo $id;
+        DB::table('barang')->where('id',$id)->delete();
+
+        return redirect()->back();
+    }
 }
 

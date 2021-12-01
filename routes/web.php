@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::get('/crud', 'CrudController@index')->name('cr');
 Route::get('/crud/tambah', 'CrudController@tambah')->name('cr.t');
 Route::post('/crud/simpan', 'CrudController@simpan')->name('cr.s');
+Route::get('/crud/delete/{id}', 'CrudController@delete')->name('cr.d');

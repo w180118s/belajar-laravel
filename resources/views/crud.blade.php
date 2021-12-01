@@ -24,7 +24,14 @@
                     <td>{{ $data->nama_barang }}</td>
                     <td>
                         <a href="#" class="badge badge-success">Edit</a>
-                        <a href="#" class="badge badge-danger swal-confirm">Delete</a>
+                        <a href="{{ route('cr.d',$data->id) }}" data-id="{{ $data->nama_barang }}" class="badge badge-danger swal-confirm">
+                        {{-- <form action="{{ route('cr.d',$data->id) }}" id="delete{{ $data->id }}" method="POST">
+                        @csrf
+                        @method('delete')
+                        </form>
+                         --}}
+                            Delete
+                        </a>
                     </td>
                 </tr>
                 @endforeach
@@ -39,22 +46,19 @@
 @endpush
 @push('page-after-script')
 <script>
-    $(".swal-confirm").click(function() {
+    $(".swal-confirm").click(function(event) {
+        event.preventDefault()
+        id = event.target.dataset.id;
         Swal.fire({
-            title: 'Are you sure?',
-            text: 'Once deleted, you will not be able to recover this imaginary file!',
+            title: 'Yakin ingin menghapus barang ' +id +'?',
+            text: 'Barang yang sudah dihapus tidak dapat dikembalikan lagi',
             icon: 'warning',
             showCancelButton:true
           })
           .then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire({
-                    title:'Data berhasil dihapus',
-                    icon:'success'
-                })
-            } else {
-                Swal.fire('Your imaginary file is safe!');
-            }
+                if (result.isConfirmed) {
+                    window.location.href = $(this).attr('href')
+                }
           });
       });
 </script>
