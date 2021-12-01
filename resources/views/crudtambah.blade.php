@@ -17,13 +17,13 @@
                     <div class="col-6">
                         <div class="form-group">
                             <label>Kode Barang</label>
-                            <input type="text" name="kode_brang" class="form-control">
+                            <input type="text" name="kode_barang" class="form-control">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
                             <label>Nama Barang</label>
-                            <input type="text" name="nama_brang" class="form-control">
+                            <input type="text" name="nama_barang" class="form-control">
                         </div>
                     </div>
                     <div class="col-12 text-right">

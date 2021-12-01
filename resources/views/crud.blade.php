@@ -9,6 +9,27 @@
         </div>
         <div class="card-body">
             <a href="{{route('cr.t')}}" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Tambah Data</a>
+            <hr>
+            <table class="table table-striped table-bordered table-sm">
+                <tr>
+                    <th>No</th>
+                    <th>Kode Barang</th>
+                    <th>Nama Barang</th>
+                    <th>Action</th>
+                </tr>
+                @foreach ($data_barang as $no => $data)
+                <tr>
+                    <td>{{ $data_barang->firstitem()+$no }}</td>
+                    <td>{{ $data->kode_barang }}</td>
+                    <td>{{ $data->nama_barang }}</td>
+                    <td>
+                        <a href="#" class="badge badge-success">Edit</a>
+                        <a href="#" class="badge badge-danger">Delete</a>
+                    </td>
+                </tr>
+                @endforeach
+            </table>
+            {{ $data_barang->links() }}
         </div>
     </div>
 </div>
