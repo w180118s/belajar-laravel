@@ -10,6 +10,16 @@
         <div class="card-body">
             <a href="{{route('cr.t')}}" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Tambah Data</a>
             <hr>
+            @if (session('message'))
+            <div class="alert alert-success alert-dismissible show fade">
+                <div class="alert-body">
+                  <button class="close" data-dismiss="alert">
+                    <span>×</span>
+                  </button>
+                  {{ session('message') }}
+                </div>
+              </div>
+            @endif
             <table class="table table-striped table-bordered table-sm">
                 <tr>
                     <th>No</th>
