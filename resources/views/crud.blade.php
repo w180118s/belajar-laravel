@@ -35,25 +35,25 @@
 </div>
 @endsection
 @push('page-script')
-<script src="{{ asset('/assets/js/page/modules-sweetalert.js') }}"></script>
+<script src="{{ asset('/assets/js/page/sweetalert2.js') }}"></script>
 @endpush
 @push('page-after-script')
 <script>
     $(".swal-confirm").click(function() {
-        swal({
+        Swal.fire({
             title: 'Are you sure?',
             text: 'Once deleted, you will not be able to recover this imaginary file!',
             icon: 'warning',
-            buttons: true,
-            dangerMode: true,
+            showCancelButton:true
           })
-          .then((willDelete) => {
-            if (willDelete) {
-            swal('Poof! Your imaginary file has been deleted!', {
-              icon: 'success',
-            });
+          .then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title:'Data berhasil dihapus',
+                    icon:'success'
+                })
             } else {
-            swal('Your imaginary file is safe!');
+                Swal.fire('Your imaginary file is safe!');
             }
           });
       });
