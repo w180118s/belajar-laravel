@@ -24,7 +24,7 @@
                     <td>{{ $data->nama_barang }}</td>
                     <td>
                         <a href="#" class="badge badge-success">Edit</a>
-                        <a href="#" class="badge badge-danger">Delete</a>
+                        <a href="#" class="badge badge-danger swal-confirm">Delete</a>
                     </td>
                 </tr>
                 @endforeach
@@ -33,5 +33,29 @@
         </div>
     </div>
 </div>
-
 @endsection
+@push('page-script')
+<script src="{{ asset('/assets/js/page/modules-sweetalert.js') }}"></script>
+@endpush
+@push('page-after-script')
+<script>
+    $(".swal-confirm").click(function() {
+        swal({
+            title: 'Are you sure?',
+            text: 'Once deleted, you will not be able to recover this imaginary file!',
+            icon: 'warning',
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+            swal('Poof! Your imaginary file has been deleted!', {
+              icon: 'success',
+            });
+            } else {
+            swal('Your imaginary file is safe!');
+            }
+          });
+      });
+</script>
+@endpush
