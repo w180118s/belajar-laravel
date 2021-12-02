@@ -33,7 +33,7 @@
                     <td>{{ $data->kode_barang }}</td>
                     <td>{{ $data->nama_barang }}</td>
                     <td>
-                        <a href="#" class="badge badge-success">Edit</a>
+                        <a href="{{ route('cr.e', $data->id) }}" class="badge badge-success">Edit</a>
                         <a href="{{ route('cr.d',$data->id) }}" data-id="{{ $data->nama_barang }}" class="badge badge-danger swal-confirm">
                         {{-- <form action="{{ route('cr.d',$data->id) }}" id="delete{{ $data->id }}" method="POST">
                         @csrf
