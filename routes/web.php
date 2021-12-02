@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/', 'otentikasi\OtentikasiController@index')->name('login');
 Route::post('/', 'otentikasi\OtentikasiController@login')->name('login');
+Route::get('/', 'otentikasi\OtentikasiController@index')->name('login');
 
 Route::group(['middleware'=>'CekLoginMiddleware'], function () {
     Route::get('/dashboard', function () {return view('index');});
