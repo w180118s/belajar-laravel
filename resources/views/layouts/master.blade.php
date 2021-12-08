@@ -1,7 +1,11 @@
       <!-- Header -->
       @include('layouts.header')
       <!-- Sidebar -->
-      @include('layouts.sidebar')
+        @if (session('type')=='user')
+            @include('layouts.sidebar')
+        @else
+            @include('layouts.sidebarsiswa')
+        @endif
 
       <!-- Main Content -->
       <div class="main-content">

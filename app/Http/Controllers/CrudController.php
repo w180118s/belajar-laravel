@@ -9,9 +9,13 @@ use function PHPSTORM_META\type;
 
 class CrudController extends Controller
 {
+    function __construct()
+    {
+        $this ->middleware('CekUser');
+    }
     // tampilkan data
     public function index(){
-        $data_barang = DB::table('barang')->paginate(3);
+        $data_barang = DB::table('barang')->paginate(4);
         return view('crud', ['data_barang' => $data_barang]);
     }
     //method untuk tambah data
