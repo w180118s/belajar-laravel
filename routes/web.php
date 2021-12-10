@@ -28,7 +28,7 @@ Route::group(['middleware'=>'CekLoginMiddleware'], function () {
         Route::patch('/crud/{id}', 'CrudController@update')->name('cr.u');
         Route::get('logout', 'otentikasi\OtentikasiController@logout')->name('logout');
         Route::get('profile', 'DataSiswa@profile')->name('profile');
-
+        Route::resource('konfigurasi/setup', 'Konfigurasi\Setup');
 });
 
 Route::get('/home', 'HomeController@index')-> name('home')->middleware('CekLoginMiddleware');
